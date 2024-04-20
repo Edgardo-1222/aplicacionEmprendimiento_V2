@@ -11,6 +11,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.aplicacionemprendimiento.ui.theme.AplicacionEmprendimientoTheme
+import androidx.navigation.compose.rememberNavController
+import com.example.aplicacionemprendimiento.ui.login.LoginScreen
+import com.example.aplicacionemprendimiento.ui.signup.SignUpScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,7 +25,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
+                    val navController = rememberNavController()
+                    MyNavigation(navController)
                 }
             }
         }
